@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  PATECA
+//  beta_PaTeca
 //
-//  Created by 高橋ゆうき on 2020/10/25.
+//  Created by 高橋ゆうき on 2020/10/21.
 //
 
 import UIKit

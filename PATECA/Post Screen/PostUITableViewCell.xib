@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="281" id="KGk-i7-Jjw" customClass="PostUITableViewCell" customModule="beta_PaTeca" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="387" height="281"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="387" height="281"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="ucd-pm-7FT">
+                        <rect key="frame" x="10" y="10" width="47" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="47" id="dcW-Ju-0uX"/>
+                            <constraint firstAttribute="height" constant="44" id="iRc-Er-Wr4"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ユーザー名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJ6-4y-xP3">
+                        <rect key="frame" x="65" y="22" width="87" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="ポストした日" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jkw-G4-e98">
+                        <rect key="frame" x="308" y="22" width="59" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="59" id="DcS-kb-WTl"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="s5" translatesAutoresizingMaskIntoConstraints="NO" id="QX3-Kb-2be">
+                        <rect key="frame" x="24" y="62" width="343" height="110"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="110" id="jIe-FJ-diH"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="huC-PP-7Qw" customClass="DesignableButton" customModule="beta_PaTeca" customModuleProvider="target">
+                        <rect key="frame" x="24" y="240" width="100" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+                        <state key="normal" title="👍 いいね"/>
+                        <connections>
+                            <action selector="LikeButtonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Itj-ck-pKc"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Z6-VJ-2Qy" customClass="DesignableButton" customModule="beta_PaTeca" customModuleProvider="target">
+                        <rect key="frame" x="143" y="240" width="100" height="30"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <state key="normal" title="🐍 リツイ"/>
+                        <connections>
+                            <action selector="ReTweetbButtonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="sJ1-zy-7Ja"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KwW-AL-83U" customClass="DesignableButton">
+                        <rect key="frame" x="262" y="240" width="100" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                        <state key="normal" title="💰 Point"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="投稿文" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAA-QD-B0B">
+                        <rect key="frame" x="24" y="180" width="338" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="eAA-QD-B0B" firstAttribute="top" secondItem="QX3-Kb-2be" secondAttribute="bottom" id="3Nb-8F-tTs"/>
+                    <constraint firstItem="QX3-Kb-2be" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="3R6-xr-Ue9"/>
+                    <constraint firstItem="QX3-Kb-2be" firstAttribute="top" secondItem="kJ6-4y-xP3" secondAttribute="bottom" constant="19" id="6H5-cl-4Vg"/>
+                    <constraint firstItem="ucd-pm-7FT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="AKi-UX-z7D"/>
+                    <constraint firstItem="QX3-Kb-2be" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="FQ9-W5-9ag"/>
+                    <constraint firstItem="kJ6-4y-xP3" firstAttribute="leading" secondItem="ucd-pm-7FT" secondAttribute="trailing" constant="8" symbolic="YES" id="KMY-5W-eWC"/>
+                    <constraint firstItem="QX3-Kb-2be" firstAttribute="top" secondItem="ucd-pm-7FT" secondAttribute="bottom" constant="8" symbolic="YES" id="RQv-d8-fyj"/>
+                    <constraint firstItem="kJ6-4y-xP3" firstAttribute="leading" secondItem="ucd-pm-7FT" secondAttribute="trailing" constant="8" symbolic="YES" id="SQT-u8-nHx"/>
+                    <constraint firstItem="Jkw-G4-e98" firstAttribute="leading" secondItem="kJ6-4y-xP3" secondAttribute="trailing" constant="156" id="cO6-bF-6kD"/>
+                    <constraint firstItem="ucd-pm-7FT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="iw8-ba-4j4"/>
+                    <constraint firstItem="kJ6-4y-xP3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="22" id="lcx-I0-Ph1"/>
+                    <constraint firstItem="eAA-QD-B0B" firstAttribute="firstBaseline" secondItem="QX3-Kb-2be" secondAttribute="baseline" constant="24.5" symbolType="layoutAnchor" id="ntv-Zo-GDq"/>
+                    <constraint firstAttribute="trailing" secondItem="QX3-Kb-2be" secondAttribute="trailing" constant="25" id="rn0-OT-dSi"/>
+                    <constraint firstItem="eAA-QD-B0B" firstAttribute="top" secondItem="QX3-Kb-2be" secondAttribute="bottom" id="vw0-zT-9AK"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="LikeButton" destination="huC-PP-7Qw" id="U0a-g4-VZU"/>
+                <outlet property="Point" destination="KwW-AL-83U" id="3NL-nu-eiV"/>
+                <outlet property="ReTweetButton" destination="3Z6-VJ-2Qy" id="nIF-l5-ZIK"/>
+                <outlet property="ReTweetbutton" destination="3Z6-VJ-2Qy" id="B0T-2P-vyC"/>
+                <outlet property="createAt" destination="Jkw-G4-e98" id="wXL-dC-zki"/>
+                <outlet property="likeButton" destination="huC-PP-7Qw" id="uk6-Zq-XQy"/>
+                <outlet property="postImage" destination="QX3-Kb-2be" id="Bqr-8s-vSr"/>
+                <outlet property="postText" destination="eAA-QD-B0B" id="nm1-MI-wAr"/>
+                <outlet property="userProfilePic" destination="ucd-pm-7FT" id="hjI-L4-Aih"/>
+                <outlet property="usernameLabel" destination="kJ6-4y-xP3" id="p78-bA-Nbe"/>
+            </connections>
+            <point key="canvasLocation" x="74.637681159420296" y="104.79910714285714"/>
+        </tableViewCell>
+    </objects>
+    <designables>
+        <designable name="3Z6-VJ-2Qy">
+            <size key="intrinsicContentSize" width="71" height="30"/>
+        </designable>
+        <designable name="KwW-AL-83U">
+            <size key="intrinsicContentSize" width="60" height="30"/>
+        </designable>
+        <designable name="huC-PP-7Qw">
+            <size key="intrinsicContentSize" width="71" height="30"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="defaultProfileImage" width="600" height="600"/>
+        <image name="s5" width="530" height="352"/>
+    </resources>
+</document>
