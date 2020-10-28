@@ -8,6 +8,7 @@
 
 import Foundation
 import Photos
+import UIKit
 
 private let enlargementAnimationDuration = 0.3
 private let tableViewRowHeight: CGFloat = 50.0
@@ -23,8 +24,8 @@ public class ImagePickerSheetController: UIViewController, UITableViewDataSource
         tableView.dataSource = self
         tableView.delegate = self
         tableView.alwaysBounceVertical = false
-        tableView.layoutMargins = UIEdgeInsetsZero
-        tableView.separatorInset = UIEdgeInsetsZero
+        tableView.layoutMargins = UIEdgeInsets.zero
+        tableView.separatorInset = UIEdgeInsets.zero
         tableView.registerClass(ImagePreviewTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(ImagePreviewTableViewCell.self))
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: NSStringFromClass(UITableViewCell.self))
         
@@ -34,14 +35,14 @@ public class ImagePickerSheetController: UIViewController, UITableViewDataSource
     private lazy var collectionView: ImagePickerCollectionView = {
         let collectionView = ImagePickerCollectionView()
         collectionView.backgroundColor = .clearColor()
-        collectionView.imagePreviewLayout.sectionInset = UIEdgeInsetsMake(collectionViewInset, collectionViewInset, collectionViewInset, collectionViewInset)
+        collectionView.imagePreviewLayout.sectionInset = UIEdgeInsets(top: collectionViewInset, left: collectionViewInset, bottom: collectionViewInset, right: collectionViewInset)
         collectionView.imagePreviewLayout.showsSupplementaryViews = false
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.alwaysBounceHorizontal = true
         collectionView.registerClass(ImageCollectionViewCell.self, forCellWithReuseIdentifier: NSStringFromClass(ImageCollectionViewCell.self))
-        collectionView.registerClass(PreviewSupplementaryView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: NSStringFromClass(PreviewSupplementaryView.self))
+        collectionView.registerClass(PreviewSupplementaryView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: NSStringFromClass(PreviewSupplementaryView.self))
         
         return collectionView
     }()
@@ -65,7 +66,7 @@ public class ImagePickerSheetController: UIViewController, UITableViewDataSource
     
     // MARK: - Initialization
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         initialize()
     }
@@ -76,7 +77,7 @@ public class ImagePickerSheetController: UIViewController, UITableViewDataSource
     }
     
     private func initialize() {
-        modalPresentationStyle = .Custom
+        modalPresentationStyle = .custom
         transitioningDelegate = self
     }
     
@@ -301,7 +302,7 @@ public class ImagePickerSheetController: UIViewController, UITableViewDataSource
     private func fetchAssets() {
         let options = PHFetchOptions()
         options.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
-        let result = PHAsset.fetchAssetsWithMediaType(.Image, options: options)
+        let result = PHAsset.fetchAssetsWithMediaType(.image, options: options)
         
         result.enumerateObjectsUsingBlock { obj, _, _ in
             if let asset = obj as? PHAsset where self.assets.count < 50 {

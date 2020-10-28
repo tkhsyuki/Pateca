@@ -70,7 +70,7 @@ public class TransitionManager: NSObject, UIViewControllerTransitioningDelegate,
         })
     }
     
-    public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+    public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return duration
     }
     

@@ -22,7 +22,7 @@ class AnimationController: NSObject, UIViewControllerAnimatedTransitioning {
     
     // MARK: - UIViewControllerAnimatedTransitioning
     
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.3
     }
     

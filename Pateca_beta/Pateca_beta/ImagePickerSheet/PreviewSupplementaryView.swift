@@ -13,34 +13,34 @@ class PreviewSupplementaryView : UICollectionReusableView {
     private let button: UIButton = {
         let button = UIButton()
         button.tintColor = .whiteColor()
-        button.userInteractionEnabled = false
-        button.setImage(PreviewSupplementaryView.checkmarkImage, forState: .Normal)
-        button.setImage(PreviewSupplementaryView.selectedCheckmarkImage, forState: .Selected)
+        button.isUserInteractionEnabled = false
+        button.setImage(PreviewSupplementaryView.checkmarkImage, for: .Normal)
+        button.setImage(PreviewSupplementaryView.selectedCheckmarkImage, for: .selected)
         
         return button
     }()
     
-    var buttonInset = UIEdgeInsetsZero
+    var buttonInset = UIEdgeInsets.zero
     
     var selected: Bool = false {
         didSet {
-            button.selected = selected
+            button.isSelected = selected
             reloadButtonBackgroundColor()
         }
     }
     
     class var checkmarkImage: UIImage? {
-        let bundle = NSBundle(forClass: ImagePickerSheetController.self)
+        let bundle = Bundle(forClass: ImagePickerSheetController.self)
         let image = UIImage(named: "PreviewSupplementaryView-Checkmark", inBundle: bundle, compatibleWithTraitCollection: nil)
         
         return image?.imageWithRenderingMode(.AlwaysTemplate)
     }
     
     class var selectedCheckmarkImage: UIImage? {
-        let bundle = NSBundle(forClass: ImagePickerSheetController.self)
+        let bundle = Bundle(forClass: ImagePickerSheetController.self)
         let image = UIImage(named: "PreviewSupplementaryView-Checkmark-Selected", inBundle: bundle, compatibleWithTraitCollection: nil)
         
-        return image?.imageWithRenderingMode(.AlwaysTemplate)
+        return image?.withRenderingMode(.alwaysTemplate)
     }
     
     // MARK: - Initialization
@@ -85,8 +85,8 @@ class PreviewSupplementaryView : UICollectionReusableView {
         super.layoutSubviews()
         
         button.sizeToFit()
-        button.frame.origin = CGPointMake(buttonInset.left, CGRectGetHeight(bounds)-CGRectGetHeight(button.frame)-buttonInset.bottom)
-        button.layer.cornerRadius = CGRectGetHeight(button.frame) / 2.0
+        button.frame.origin = CGPointMake(buttonInset.left, CGRect.height(bounds)-CGRectGetHeight(button.frame)-buttonInset.bottom)
+        button.layer.cornerRadius = CGRect.height(button.frame) / 2.0
     }
     
 }

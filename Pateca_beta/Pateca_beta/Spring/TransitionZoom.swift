@@ -62,7 +62,7 @@ public class TransitionZoom: NSObject, UIViewControllerTransitioningDelegate, UI
         })
     }
     
-    public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+    public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return duration
     }
     

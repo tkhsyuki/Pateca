@@ -21,7 +21,7 @@ class ImagePickerCollectionView: UICollectionView {
     // MARK: - Initialization
 
     init() {
-        super.init(frame: CGRectZero, collectionViewLayout: ImagePreviewFlowLayout())
+        super.init(frame: CGRect.zero, collectionViewLayout: ImagePreviewFlowLayout())
         
         initialize()
     }
@@ -39,9 +39,9 @@ class ImagePickerCollectionView: UICollectionView {
     // MARK: - Panning
 
     @objc private func handlePanGesture(gestureRecognizer: UIPanGestureRecognizer) {
-        if gestureRecognizer.state == .Ended {
+        if gestureRecognizer.state == .ended {
             let translation = gestureRecognizer.translationInView(self)
-            if translation == CGPointZero {
+            if translation == CGPoint.zero {
                 if !bouncing {
                     let possibleIndexPath = indexPathForItemAtPoint(gestureRecognizer.locationInView(self))
                     if let indexPath = possibleIndexPath {

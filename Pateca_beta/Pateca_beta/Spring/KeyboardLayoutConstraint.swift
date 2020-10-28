@@ -32,12 +32,12 @@ public class KeyboardLayoutConstraint: NSLayoutConstraint {
 
         offset = constant
 
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShowNotification:", name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHideNotification:", name: UIKeyboardWillHideNotification, object: nil)
+        NotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShowNotification:", name: UIKeyboardWillShowNotification, object: nil)
+        NotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHideNotification:", name: UIKeyboardWillHideNotification, object: nil)
     }
 
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.defaultCenter().removeObserver(self)
     }
 
     // MARK: Notification
@@ -51,12 +51,12 @@ public class KeyboardLayoutConstraint: NSLayoutConstraint {
 
             self.updateConstant()
             switch (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber, userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber) {
-            case let (.Some(duration), .Some(curve)):
+            case let (.some(duration), .some(curve)):
 
-                let options = UIViewAnimationOptions(rawValue: curve.unsignedLongValue)
+                let options = UIView.AnimationOptions(rawValue: curve.unsignedLongValue)
 
                 UIView.animateWithDuration(
-                    NSTimeInterval(duration.doubleValue),
+                    TimeInterval(duration.doubleValue),
                     delay: 0,
                     options: options,
                     animations: {
@@ -80,12 +80,12 @@ public class KeyboardLayoutConstraint: NSLayoutConstraint {
         if let userInfo = notification.userInfo {
 
             switch (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber, userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber) {
-            case let (.Some(duration), .Some(curve)):
+            case let (.some(duration), .some(curve)):
 
-                let options = UIViewAnimationOptions(rawValue: curve.unsignedLongValue)
+                let options = UIView.AnimationOptions(rawValue: curve.unsignedLongValue)
 
                 UIView.animateWithDuration(
-                    NSTimeInterval(duration.doubleValue),
+                    TimeInterval(duration.doubleValue),
                     delay: 0,
                     options: options,
                     animations: {

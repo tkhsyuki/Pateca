@@ -51,7 +51,7 @@ public class ActionButton: NSObject {
         self.items = items
         let bounds = self.parentView.bounds
         
-        self.floatButton = UIButton(type: .Custom) as UIButton
+        self.floatButton = UIButton(type: .custom) as UIButton
         self.floatButton.layer.cornerRadius = CGFloat(floatButtonRadius / 2)
         self.floatButton.layer.shadowOpacity = 1
         self.floatButton.layer.shadowRadius = 2
@@ -61,7 +61,7 @@ public class ActionButton: NSObject {
         self.floatButton.backgroundColor = UIColor(red: 238.0/255.0, green: 130.0/255.0, blue: 34.0/255.0, alpha:1.0)
         self.floatButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 8, right: 0)
         self.floatButton.titleLabel!.font = UIFont(name: "HelveticaNeue-Light", size: 35)
-        self.floatButton.userInteractionEnabled = true
+        self.floatButton.isUserInteractionEnabled = true
         self.floatButton.translatesAutoresizingMaskIntoConstraints = false
         
         self.floatButton.addTarget(self, action: Selector("buttonTapped:"), forControlEvents: .TouchUpInside)
@@ -69,7 +69,7 @@ public class ActionButton: NSObject {
         self.parentView.addSubview(self.floatButton)
 
         self.contentView = UIView(frame: bounds)
-        self.blurVisualEffect = UIVisualEffectView(effect: UIBlurEffect(style: .Light))
+        self.blurVisualEffect = UIVisualEffectView(effect: UIBlurEffect(style: .light))
         self.blurVisualEffect.frame = self.contentView.frame
 //        self.contentView.addSubview(self.blurVisualEffect)
         
@@ -92,8 +92,8 @@ public class ActionButton: NSObject {
         self.floatButton.addConstraints(width)
         self.floatButton.addConstraints(height)
         
-        let trailingSpacing = NSLayoutConstraint.constraintsWithVisualFormat("V:[floatButton]-15-|", options: [], metrics: nil, views: views)
-        let bottomSpacing = NSLayoutConstraint.constraintsWithVisualFormat("H:[floatButton]-15-|", options: [], metrics: nil, views: views)
+        let trailingSpacing = NSLayoutConstraint.constraints(withVisualFormat: "V:[floatButton]-15-|", options: [], metrics: nil, views: views)
+        let bottomSpacing = NSLayoutConstraint.constraints(withVisualFormat: "H:[floatButton]-15-|", options: [], metrics: nil, views: views)
         self.parentView.addConstraints(trailingSpacing)
         self.parentView.addConstraints(bottomSpacing)
     }
@@ -151,8 +151,8 @@ public class ActionButton: NSObject {
     private func animateMenu() {
         let rotation = self.active ? 0 : CGFloat(M_PI_4)
         
-        UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.1, options: [], animations: {
-            self.floatButton.transform = CGAffineTransformMakeRotation(rotation)
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.1, options: [], animations: {
+            self.floatButton.transform = CGAffineTransform(rotationAngle: rotation)
     
             if self.active == false {
                 self.contentView.alpha = 1.0
@@ -170,7 +170,7 @@ public class ActionButton: NSObject {
                 
                 if let optionalItems = self.items {
                     for item in optionalItems {
-                        item.view.transform = CGAffineTransformMakeTranslation(0, 0)
+                        item.view.transform = CGAffineTransform(translationX: 0, y: 0)
                         item.view.alpha = 0
                     }
                 }
@@ -183,8 +183,8 @@ public class ActionButton: NSObject {
     }
     
     private func animateClick() {
-        UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.1, options: [.Repeat, .Autoreverse], animations: {
-            self.floatButton.transform = CGAffineTransformMakeScale(1.2, 1.2)
+        UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.1, options: [.repeat, .autoreverse], animations: {
+            self.floatButton.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
         }, completion: nil)
     }
     
@@ -198,7 +198,7 @@ public class ActionButton: NSObject {
     
     private func animatePressingWithScale(scale: CGFloat) {
         UIView.animateWithDuration(0.2, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.1, options: [], animations: {
-            self.floatButton.transform = CGAffineTransformMakeScale(scale, scale)
+            self.floatButton.transform = CGAffineTransform(scaleX: scale, y: scale)
         }, completion: nil)
     }
 }

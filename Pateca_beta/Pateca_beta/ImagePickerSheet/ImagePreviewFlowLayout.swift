@@ -19,7 +19,7 @@ class ImagePreviewFlowLayout: UICollectionViewFlowLayout {
     }
     
     private var layoutAttributes = [UICollectionViewLayoutAttributes]()
-    private var contentSize = CGSizeZero
+    private var contentSize = CGSize.zero
     
     // MARK: - Initialization
     
@@ -36,16 +36,16 @@ class ImagePreviewFlowLayout: UICollectionViewFlowLayout {
     }
     
     private func initialize() {
-        scrollDirection = .Horizontal
+        scrollDirection = .horizontal
     }
 
     // MARK: - Layout
     
     override func prepareLayout() {
-        super.prepareLayout()
+        super.prepare()
         
         layoutAttributes.removeAll(keepCapacity: false)
-        contentSize = CGSizeZero
+        contentSize = CGSize.zero
 
         if let collectionView = collectionView,
                dataSource = collectionView.dataSource,

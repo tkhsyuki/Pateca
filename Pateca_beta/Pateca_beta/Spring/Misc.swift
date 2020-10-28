@@ -74,7 +74,7 @@ public extension UIColor {
             hex         = hex.substringFromIndex(index)
         }
 
-        let scanner = NSScanner(string: hex)
+        let scanner = Scanner(string: hex)
         var hexValue: CUnsignedLongLong = 0
         if scanner.scanHexLongLong(&hexValue) {
             switch (hex.characters.count) {
@@ -121,13 +121,13 @@ public func UIColorFromRGB(rgbValue: UInt) -> UIColor {
 }
 
 public func stringFromDate(date: NSDate, format: String) -> String {
-    let dateFormatter = NSDateFormatter()
+    let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = format
     return dateFormatter.stringFromDate(date)
 }
 
 public func dateFromString(date: String, format: String) -> NSDate {
-    let dateFormatter = NSDateFormatter()
+    let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = format
     if let date = dateFormatter.dateFromString(date) {
         return date

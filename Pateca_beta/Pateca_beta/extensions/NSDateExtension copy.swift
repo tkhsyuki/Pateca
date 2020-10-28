@@ -12,7 +12,7 @@ extension NSDate
 {
     static func shortStringFromDate(date: NSDate) -> String
     {
-        let formatter = NSDateFormatter()
+        let formatter = DateFormatter()
         formatter.dateStyle = NSDateFormatterStyle.ShortStyle
         return formatter.stringFromDate(date)
     }

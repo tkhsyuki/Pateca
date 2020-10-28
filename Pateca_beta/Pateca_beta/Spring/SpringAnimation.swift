@@ -22,7 +22,7 @@
 
 import UIKit
 
-public func spring(duration: NSTimeInterval, animations: (() -> Void)!) {
+public func spring(duration: TimeInterval, animations: (() -> Void)!) {
     
     UIView.animateWithDuration(
         duration,
@@ -38,12 +38,12 @@ public func spring(duration: NSTimeInterval, animations: (() -> Void)!) {
     })
 }
 
-public func springEaseIn(duration: NSTimeInterval, animations: (() -> Void)!) {
+public func springEaseIn(duration: TimeInterval, animations: (() -> Void)!) {
     
     UIView.animateWithDuration(
         duration,
         delay: 0,
-        options: UIViewAnimationOptions.CurveEaseIn,
+        options: UIView.AnimationOptions.curveEaseIn,
         animations: {
             
             animations()
@@ -52,12 +52,12 @@ public func springEaseIn(duration: NSTimeInterval, animations: (() -> Void)!) {
     })
 }
 
-public func springEaseOut(duration: NSTimeInterval, animations: (() -> Void)!) {
+public func springEaseOut(duration: TimeInterval, animations: (() -> Void)!) {
     
     UIView.animateWithDuration(
         duration,
         delay: 0,
-        options: UIViewAnimationOptions.CurveEaseOut,
+        options: UIView.AnimationOptions.curveEaseOut,
         animations: {
             
             animations()
@@ -66,7 +66,7 @@ public func springEaseOut(duration: NSTimeInterval, animations: (() -> Void)!) {
     })
 }
 
-public func springEaseInOut(duration: NSTimeInterval, animations: (() -> Void)!) {
+public func springEaseInOut(duration: TimeInterval, animations: (() -> Void)!) {
     
     UIView.animateWithDuration(
         duration,
@@ -80,12 +80,12 @@ public func springEaseInOut(duration: NSTimeInterval, animations: (() -> Void)!)
     })
 }
 
-public func springLinear(duration: NSTimeInterval, animations: (() -> Void)!) {
+public func springLinear(duration: TimeInterval, animations: (() -> Void)!) {
     
     UIView.animateWithDuration(
         duration,
         delay: 0,
-        options: UIViewAnimationOptions.CurveLinear,
+        options: UIView.AnimationOptions.curveLinear,
         animations: {
             
             animations()
@@ -94,7 +94,7 @@ public func springLinear(duration: NSTimeInterval, animations: (() -> Void)!) {
     })
 }
 
-public func springWithDelay(duration: NSTimeInterval, delay: NSTimeInterval, animations: (() -> Void)!) {
+public func springWithDelay(duration: TimeInterval, delay: TimeInterval, animations: (() -> Void)!) {
     UIView.animateWithDuration(
         duration,
         delay: delay,
@@ -109,7 +109,7 @@ public func springWithDelay(duration: NSTimeInterval, delay: NSTimeInterval, ani
     })
 }
 
-public func springWithCompletion(duration: NSTimeInterval, animations: (() -> Void)!, completion: ((Bool) -> Void)!) {
+public func springWithCompletion(duration: TimeInterval, animations: (() -> Void)!, completion: ((Bool) -> Void)!) {
 
     UIView.animateWithDuration(
         duration,
