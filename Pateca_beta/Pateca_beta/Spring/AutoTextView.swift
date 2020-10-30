@@ -10,7 +10,7 @@ import UIKit
 
 class AutoTextView: UITextView {
     override func intrinsicContentSize() -> CGSize {
-        var size = self.sizeThatFits(CGSizeMake(self.frame.size.width, CGFloat.max))
+        var size = self.sizeThatFits(CGSize.init(width: self.frame.size.width, height: CGFloat.greatestFiniteMagnitude))
         size.width = self.frame.size.width
         if text.length == 0 {
             size.height = 0

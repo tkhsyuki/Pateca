@@ -21,13 +21,14 @@ public class ImagePickerSheetController: UIViewController, UITableViewDataSource
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
+        //データソース、delegateを適応
         tableView.dataSource = self
         tableView.delegate = self
         tableView.alwaysBounceVertical = false
         tableView.layoutMargins = UIEdgeInsets.zero
         tableView.separatorInset = UIEdgeInsets.zero
-        tableView.registerClass(ImagePreviewTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(ImagePreviewTableViewCell.self))
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: NSStringFromClass(UITableViewCell.self))
+        tableView.register(ImagePreviewTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(ImagePreviewTableViewCell.self))
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: NSStringFromClass(UITableViewCell.self))
         
         return tableView
     }()

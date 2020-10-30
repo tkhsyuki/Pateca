@@ -40,12 +40,12 @@ class ImagePickerCollectionView: UICollectionView {
 
     @objc private func handlePanGesture(gestureRecognizer: UIPanGestureRecognizer) {
         if gestureRecognizer.state == .ended {
-            let translation = gestureRecognizer.translationInView(self)
+            let translation = gestureRecognizer.translation(in: self)
             if translation == CGPoint.zero {
                 if !bouncing {
-                    let possibleIndexPath = indexPathForItemAtPoint(gestureRecognizer.locationInView(self))
+                    let possibleIndexPath = indexPathForItem(at: gestureRecognizer.location(in: self))
                     if let indexPath = possibleIndexPath {
-                        selectItemAtIndexPath(indexPath, animated: false, scrollPosition: .None)
+                        selectItem(at: indexPath, animated: false, scrollPosition: .None)
                         delegate?.collectionView?(self, didSelectItemAtIndexPath: indexPath)
                     }
                 }

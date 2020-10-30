@@ -46,6 +46,7 @@ class PostUITableViewCell: UITableViewCell {
         postImage.layer.cornerRadius = 5.0
         postImage.clipsToBounds = true
         
+        //post UIに画像、数値を割当
         userProfilePic.image! = post.user.profileImage
         usernameLabel.text! = post.user.fullName
         createdAt.text! = post.createdAt
@@ -73,12 +74,13 @@ class PostUITableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    //いいねボタンが押された時
     @IBAction func LikeButtonClicked() {
         
        
     }
     
-    
+    //リツイートボタンが押された時
     @IBAction func ReTweetbButtonClicked() {
         
     }

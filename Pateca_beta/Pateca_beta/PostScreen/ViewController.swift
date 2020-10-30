@@ -4,8 +4,10 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    //サンプルデータをpostに格納する
     var post = Post.allPosts
     
+    //まずここが実施される
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
