@@ -35,7 +35,8 @@ public class ImagePickerSheetController: UIViewController, UITableViewDataSource
     
     private lazy var collectionView: ImagePickerCollectionView = {
         let collectionView = ImagePickerCollectionView()
-        collectionView.backgroundColor = .clearColor()
+        
+        collectionView.backgroundColor = UIColor.clear
         collectionView.imagePreviewLayout.sectionInset = UIEdgeInsets(top: collectionViewInset, left: collectionViewInset, bottom: collectionViewInset, right: collectionViewInset)
         collectionView.imagePreviewLayout.showsSupplementaryViews = false
         collectionView.dataSource = self

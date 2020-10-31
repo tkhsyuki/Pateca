@@ -37,7 +37,9 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath as IndexPath) as! UITableViewCell
+        
+        //cell に再利用できるpostCellを代入
+        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell",for indexPath: IndexPath)  UITableViewCell
         
         cell.post = post[indexPath.row]
         

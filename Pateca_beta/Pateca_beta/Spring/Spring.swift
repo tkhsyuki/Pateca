@@ -447,8 +447,9 @@ public class Spring : NSObject {
             self.alpha = self.opacity
         }
 
-        UIView.animateWithDuration( TimeInterval(duration),
-                                    delay: TimeInterval(delay),
+        UIView.animate(
+            withDuration: TimeInterval(duration),
+            delay: TimeInterval(delay),
             usingSpringWithDamping: damping,
             initialSpringVelocity: velocity,
             options: getAnimationOptions(curve: curve),
@@ -456,7 +457,7 @@ public class Spring : NSObject {
             if let _self = self
             {
                 if _self.animateFrom {
-                    _self.transform = CGAffineTransformIdentity
+                    _self.transform = CGAffineTransform.identity
                     _self.alpha = 1
                 }
                 else {

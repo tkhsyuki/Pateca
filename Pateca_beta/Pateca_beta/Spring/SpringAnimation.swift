@@ -95,8 +95,8 @@ public func springLinear(duration: TimeInterval, animations: (() -> Void)!) {
 }
 
 public func springWithDelay(duration: TimeInterval, delay: TimeInterval, animations: (() -> Void)!) {
-    UIView.animateWithDuration(
-        duration,
+    UIView.animate(
+        withDuration: duration,
         delay: delay,
         usingSpringWithDamping: 0.7,
         initialSpringVelocity: 0.7,
@@ -111,8 +111,8 @@ public func springWithDelay(duration: TimeInterval, delay: TimeInterval, animati
 
 public func springWithCompletion(duration: TimeInterval, animations: (() -> Void)!, completion: ((Bool) -> Void)!) {
 
-    UIView.animateWithDuration(
-        duration,
+    UIView.animate(
+        withDuration: duration,
         delay: 0,
         usingSpringWithDamping: 0.7,
         initialSpringVelocity: 0.7,

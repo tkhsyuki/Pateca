@@ -51,7 +51,7 @@ public class TransitionManager: NSObject, UIViewControllerTransitioningDelegate,
             // the same time take consideration of
             // previous transformation when presenting
             let transform = toView.transform
-            toView.transform = CGAffineTransformIdentity
+            toView.transform = CGAffineTransform.identity
             toView.frame = container.bounds
             toView.transform = transform
 
@@ -70,7 +70,7 @@ public class TransitionManager: NSObject, UIViewControllerTransitioningDelegate,
         })
     }
     
-    public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+    public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return duration
     }
     

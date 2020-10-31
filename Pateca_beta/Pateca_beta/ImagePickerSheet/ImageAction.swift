@@ -13,7 +13,7 @@ public enum ImageActionStyle {
     case Cancel
 }
 
-public typealias Title = Int -> String
+public typealias Title = (Int) -> String
 
 public class ImageAction {
     
