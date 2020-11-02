@@ -56,7 +56,6 @@
 		169A8A3F2545643200C16453 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169A8A222545643200C16453 /* UnwindSegue.swift */; };
 		169A8A402545643200C16453 /* SpringTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169A8A232545643200C16453 /* SpringTextView.swift */; };
 		169A8A412545643200C16453 /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169A8A242545643200C16453 /* TransitionZoom.swift */; };
-		169A8A422545643200C16453 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 169A8A252545643200C16453 /* Info.plist */; };
 		169A8A432545643200C16453 /* DesignableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169A8A262545643200C16453 /* DesignableImageView.swift */; };
 		169A8A4F2545647F00C16453 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169A8A4B2545647F00C16453 /* Post.swift */; };
 		169A8A502545647F00C16453 /* DeviseSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169A8A4C2545647F00C16453 /* DeviseSize.swift */; };
@@ -434,7 +433,6 @@
 				169A89B8254562D100C16453 /* LaunchScreen.storyboard in Resources */,
 				169A89FE2545639000C16453 /* Images.xcassets in Resources */,
 				169A8A572545651700C16453 /* PostUITableViewCell.xib in Resources */,
-				169A8A422545643200C16453 /* Info.plist in Resources */,
 				169A89B5254562D100C16453 /* Assets.xcassets in Resources */,
 				169A89B0254562CF00C16453 /* Main.storyboard in Resources */,
 				169A8A2A2545643200C16453 /* LoadingView.xib in Resources */,

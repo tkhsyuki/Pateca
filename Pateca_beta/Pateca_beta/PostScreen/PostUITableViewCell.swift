@@ -12,10 +12,12 @@ class PostUITableViewCell: UITableViewCell {
     
     //ユーザー画像
     @IBOutlet weak var userProfilePic: UIImageView!
+    
     //ユーザーネーム
     @IBOutlet weak var usernameLabel: UILabel!
     //投稿日
-    @IBOutlet weak var createdAt: UILabel!
+    @IBOutlet weak var CreatedAt: UILabel!
+    
     //投稿画像
     @IBOutlet weak var postImage: UIImageView!
     //投稿文
@@ -24,8 +26,7 @@ class PostUITableViewCell: UITableViewCell {
     //いいねボタン
     @IBOutlet weak var LikeButton: UIButton!
     //リツイートボタン
-    @IBOutlet weak var ReTweetButton: UIButton!
-    
+    @IBOutlet weak var RetweetButtun: UIButton!
     //投げ銭ボタン
     @IBOutlet weak var Point: UIButton!
     
@@ -49,7 +50,7 @@ class PostUITableViewCell: UITableViewCell {
         //post UIに画像、数値を割当
         userProfilePic.image! = post.user.profileImage
         usernameLabel.text! = post.user.fullName
-        createdAt.text! = post.createdAt
+        CreatedAt.text! = post.createdAt
         postImage.image = post.postImage
         postText.text! = post.postText
         
@@ -80,8 +81,7 @@ class PostUITableViewCell: UITableViewCell {
        
     }
     
-    //リツイートボタンが押された時
-    @IBAction func ReTweetbButtonClicked() {
-        
+    
+    @IBAction func RetweetButtonClicked() {
     }
 }
