@@ -13,8 +13,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        //StoryBord上で作っていないのでViewへ登録する
+        // 1postの縦の最低高さ300px
+        tableView.estimatedRowHeight = 500
+        //文の長さで自動でpostが大きくなる
+        tableView.rowHeight = UITableView.automaticDimension
         
+        
+        //*StoryBord上でPostUITableViewを作っていないのでViewへ登録する*//
         //PostUITableViewCellを登録
         let nib = UINib(nibName: "PostUITableViewCell", bundle: nil)
        
